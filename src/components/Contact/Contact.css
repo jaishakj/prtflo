@@ -1,0 +1,55 @@
+.contact-section {
+  padding: 5rem 2rem;
+  background: var(--color-bg-alt);
+}
+
+.connect-circles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem 1.4rem;
+  justify-content: center;
+  padding: 1rem 0 2.5rem;
+}
+
+.circle-link {
+  position: relative;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: var(--chip-bg);
+  border: 3px solid var(--chip-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--chip-text);
+  transition: transform 0.25s var(--ease-spring), background 0.25s ease, border-color 0.25s ease;
+}
+
+.circle-link:hover {
+  transform: translateY(-6px) scale(1.08);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.circle-link:hover svg {
+  color: var(--snow);
+}
+
+.circle-link::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: -26px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.65rem;
+  font-weight: 700;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+  color: var(--color-text);
+}
+
+.circle-link:hover::after {
+  opacity: 1;
+}
