@@ -1,0 +1,12 @@
+footer {
+  background: var(--color-ink);
+  color: var(--color-bg);
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer-container p {
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  font-size: 0.9rem;
+}
