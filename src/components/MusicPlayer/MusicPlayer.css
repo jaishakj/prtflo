@@ -1,0 +1,61 @@
+.music-player {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--nav-chip-bg);
+  color: var(--nav-chip-text);
+  border: 2px solid var(--nav-border);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.music-visualizer {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 16px;
+}
+
+.music-visualizer span {
+  width: 3px;
+  background: var(--nav-text);
+  border-radius: 2px;
+  transition: height 0.3s ease;
+}
+
+.music-visualizer span:nth-child(1) { height: 4px; }
+.music-visualizer span:nth-child(2) { height: 8px; }
+.music-visualizer span:nth-child(3) { height: 6px; }
+
+.music-player.playing .music-visualizer span:nth-child(1) {
+  animation: musicBar1 0.6s ease-in-out infinite alternate;
+}
+.music-player.playing .music-visualizer span:nth-child(2) {
+  animation: musicBar2 0.5s ease-in-out infinite alternate;
+}
+.music-player.playing .music-visualizer span:nth-child(3) {
+  animation: musicBar3 0.7s ease-in-out infinite alternate;
+}
+
+.music-player.playing .music-visualizer span {
+  background: var(--color-accent);
+}
+
+@keyframes musicBar1 {
+  to { height: 14px; }
+}
+@keyframes musicBar2 {
+  to { height: 16px; }
+}
+@keyframes musicBar3 {
+  to { height: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .music-visualizer span {
+    animation: none !important;
+  }
+}
