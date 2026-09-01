@@ -10,7 +10,7 @@ export default defineConfig({
   // Change this to your GitHub repository name.
   // Example:
   // https://jaishakj.github.io/portfolio/
-  base: "/portfolio/",
+  base: "/",
 
   resolve: {
     alias: {
